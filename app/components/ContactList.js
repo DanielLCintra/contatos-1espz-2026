@@ -1,10 +1,11 @@
+import { useCallback } from "react";
 import ContactItem from "./ContactItem";
 import EmptyState from "./ui/EmptyState";
 
 const ContactList = ({ contacts, setContacts }) => {
-    const handleRemove = (id) => {
+    const handleRemove = useCallback((id) => {
         setContacts((prev) => prev.filter((c) => c.id !== id));
-    };
+    }, [])
 
     return (<section className="bg-white shadow rounded">
         <div className="px-4 py-3 border-b">
