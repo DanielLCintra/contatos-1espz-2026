@@ -5,6 +5,7 @@ import PageHeader from "./ui/PageHeader";
 
 const ContactDetail = ({ contact, onBack }) => {
     return (
+
         <div className="bg-white shadow rounded-lg p-6">
             <PageHeader title="Detalhes do Contato" className="mb-6">
                 <Button variant="ghost" onClick={onBack}>
