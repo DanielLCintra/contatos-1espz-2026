@@ -1,4 +1,3 @@
-// contexts/AuthContext.js (NOVO ARQUIVO)
 "use client";
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
@@ -20,7 +19,6 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Verificar autenticação ao carregar
     useEffect(() => {
         const checkAuth = () => {
             try {
@@ -42,6 +40,7 @@ export const AuthProvider = ({ children }) => {
 
         checkAuth();
     }, []);
+
 
     const login = useCallback(async (email, password) => {
         try {
@@ -101,7 +100,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-
     const isAuthenticated = !!user;
 
     const value = {
@@ -121,5 +119,4 @@ export const AuthProvider = ({ children }) => {
             {children}
         </AuthContext.Provider>
     );
-
 }
